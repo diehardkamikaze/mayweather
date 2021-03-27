@@ -1,4 +1,5 @@
-import Post from './Post';
+import Post from '@models/Post';
+import * as $ from 'jquery';
 import './styles/styles.css';
 import weather from './assets/weather.json';
 import ryan from './assets/ry.jpg';
@@ -10,3 +11,6 @@ const post = new Post('WebPack test', ryan);
 console.log(post);
 console.log("XML", xml);
 console.log("CSV", csv);
+
+
+$("pre").html(post.toString());

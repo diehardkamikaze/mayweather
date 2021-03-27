@@ -18,6 +18,18 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
+ optimization: {
+	 splitChunks: {
+		 chunks: 'all',
+	 }
+ },
+  resolve: {
+    extensions: ['.js', '.json'],
+    alias: {
+      '@models': path.resolve(__dirname, 'src/models'),
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
   module: {
     rules: [{
       test: /\.css$/,
