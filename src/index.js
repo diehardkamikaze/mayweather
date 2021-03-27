@@ -1,6 +1,5 @@
-import Post from './Post.js'
+import Post from './Post';
+import './styles/styles.css';
 
 const post = new Post('WebPack test');
- 
-alert(post.toString());
-              
+console.log(post);
