@@ -7,6 +7,7 @@ import ryan from './assets/ry.jpg';
 import xml from './assets/ry.xml';
 import csv from './assets/weather.csv';
 import './styles/less.less'
+import './babel.js'
 
 const post = new Post('WebPack test', ryan);
 

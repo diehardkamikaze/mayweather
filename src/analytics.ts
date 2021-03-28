@@ -1,12 +1,12 @@
 import * as $ from 'jquery';
 
-function createAnalytics() {
+function createAnalytics() : object {
   let counter = 0;
-  let isDestroyed = false;
+  let isDestroyed : boolean = false;
   // eslint-disable-next-line no-return-assign
   const listener = () => counter += 1;
 
-  $(document).addEventListener('click', listener);
+  $(document).on('click', listener); 
 
   return {
     destroy() {
@@ -23,4 +23,4 @@ function createAnalytics() {
   };
 }
 
-window.analytics = createAnalytics();
+window['analytics'] = createAnalytics();
