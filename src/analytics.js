@@ -6,7 +6,7 @@ function createAnalytics() {
   // eslint-disable-next-line no-return-assign
   const listener = () => counter += 1;
 
-  document.addEventListener('click', listener);
+  $(document).addEventListener('click', listener);
 
   return {
     destroy() {
