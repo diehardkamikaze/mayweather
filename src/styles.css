@@ -1,0 +1,75 @@
+body {
+    box-sizing: border-box;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.control-block, .forecast-for-today, .free-days-forecast, .location-info {
+    background-color: rgb(186, 223, 235);
+    display: flex;
+    margin-bottom: 10px;
+    padding: 20px;
+    border: 1px solid grey;
+    border-radius: 20px;
+}
+
+/* control block styles */
+
+.control-block {
+    justify-content: space-around;
+}
+
+.control-block button {
+    padding: 15px;
+    border: 2px solid rgb(19, 2, 172);
+    background-color: rgb(7, 128, 241);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.control-block input {
+    padding: 5px;
+}
+
+/* main */
+
+main {
+    display: flex; 
+    justify-content: space-between;
+}
+
+/* forecast block styles */
+
+.forecast {
+    width: 48%;
+}
+
+
+/* forecast-for-today */
+.city {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.country {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.current-temperature {
+    font-size: 40px;
+}
+/* free-days-forecast */
+.forecast-list
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* location block styles */
+.location-info {
+    box-sizing: border-box;
+    width: 48%;
+}
