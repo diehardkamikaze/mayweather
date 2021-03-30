@@ -1,11 +1,14 @@
 body {
     box-sizing: border-box;
     height: 100vh;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; 
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
 .control-block, .forecast-for-today, .free-days-forecast, .location-info {
+    opacity: 0.7;
     background-color: rgb(186, 223, 235);
     display: flex;
     margin-bottom: 10px;
