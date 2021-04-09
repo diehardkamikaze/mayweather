@@ -1,25 +1,30 @@
 import './styles.css';
 import './assets/fonts/Roboto/Roboto-Regular.ttf';
-import loaderToggle from './loader/loader';
+import addLoader from './loader/loader';
 import getJSON from './api/getjson';
 import { changeBgLogic } from './buttons_handlers/buttons_logic';
 import buttonHandler from './buttons_handlers/buttons_handler';
 
+const zZ = addLoader(document.body);
 window.masterObj = {
   bg_img: '',
 };
 
 function initAll() {
-  window.masterObj.bg_img = document.body;
+  changeBgLogic('bg');
+  window.masterObj.bg = document.body;
+
+
   window.masterObj.buttons = {};
   window.masterObj.buttons.bg = document.querySelector('.change-bg');
+  window.masterObj.buttons.unit = document.querySelector('.change-unit');
+  window.masterObj.buttons.lang = document.querySelector('.change-lang');
   /* add event listeners */
   window.masterObj.buttons.bg.addEventListener('click', () => buttonHandler('bg', changeBgLogic));
 }
 
 initAll();
 
-const test = document.querySelector('.loader');
-setTimeout(() => { loaderToggle(test); }, 1000);
+setTimeout(() => { document.body.removeChild(zZ); }, 1000);
 
 getJSON('http://ipinfo.io/?token=8f1769cb9f55d9').then((result) => { console.log(result); });

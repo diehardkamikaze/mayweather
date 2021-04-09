@@ -1,9 +1,8 @@
-function loaderToggle(loader) {
-  if (loader.classList.contains('none')) {
-    loader.classList.remove('none');
-  } else {
-    loader.classList.add('none');
-  }
-}
+const addLoader = (elem) => {
+  const childLoader = document.createElement('div');
+  childLoader.classList.add('loader');
+  elem.appendChild(childLoader);
+  return childLoader;
+};
 
-export default loaderToggle;
+export default addLoader;

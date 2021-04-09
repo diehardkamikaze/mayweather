@@ -1,113 +1,120 @@
 body {
-    box-sizing: border-box;
-    height: 100vh;
-    font-family: 'Roboto', sans-serif; 
-    background-repeat: no-repeat;
-    background-size: cover;
+  box-sizing: border-box;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-
-.control-block, .forecast-for-today, .free-days-forecast, .location-info {
-    opacity: 0.7;
-    background-color: rgb(186, 223, 235);
-    display: flex;
-    margin-bottom: 10px;
-    padding: 20px;
-    border: 1px solid grey;
-    border-radius: 20px;
+.control-block,
+.forecast-for-today,
+.free-days-forecast,
+.location-info {
+  opacity: 0.7;
+  background-color: rgb(186, 223, 235);
+  display: flex;
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 20px;
 }
 
 /* control block styles */
 
 .control-block {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
 .control-block button {
-    padding: 15px;
-    border: 2px solid rgb(19, 2, 172);
-    background-color: rgb(7, 128, 241);
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
+  padding: 15px;
+  border: 2px solid rgb(19, 2, 172);
+  background-color: rgb(7, 128, 241);
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.control-block button:disabled {
+  background-color: grey;
 }
 
 .control-block input {
-    padding: 5px;
+  padding: 5px;
 }
 
 /* main */
 
 main {
-    display: flex; 
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* forecast block styles */
 
 .forecast {
-    width: 48%;
+  width: 48%;
 }
-
 
 /* forecast-for-today */
 .city {
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .country {
-    font-size: 25px;
-    font-weight: bold;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .current-temperature {
-    font-size: 40px;
+  font-size: 40px;
 }
 /* free-days-forecast */
-.forecast-list
-{
-    display: flex;
-    justify-content: space-between;
+.forecast-list {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* location block styles */
 .location-info {
-    box-sizing: border-box;
-    width: 48%;
+  box-sizing: border-box;
+  width: 48%;
 }
-
 
 /* loader */
 
 .loader {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 200;
-    background-color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background-color: white;
 }
 
-  .loader:before {
-    content: '';
-    position: absolute;
-    top: calc(50% - 60px);
-    left: calc(50% - 60px);
-    border: 16px solid #f3f3f3; 
-    border-top: 16px solid #3498db; 
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+.loader:before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 60px);
+  left: calc(50% - 60px);
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
 
-  .none {
-      display: none;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.none {
+  display: none;
+}
