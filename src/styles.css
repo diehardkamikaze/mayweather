@@ -1,4 +1,6 @@
 body {
+  margin: 0px;
+  padding: 10px;
   box-sizing: border-box;
   height: 100vh;
   font-family: "Roboto", sans-serif;
@@ -13,7 +15,7 @@ footer {
 
 .control-block,
 .forecast-for-today,
-.free-days-forecast,
+.three-days-forecast,
 .location-info {
   position: relative;
   background-color: rgba(186, 223, 235, 0.7);
@@ -57,10 +59,32 @@ main {
 /* forecast block styles */
 
 .forecast {
+  height: 82vh;
   width: 48%;
 }
 
 /* forecast-for-today */
+.forecast-for-today {
+  height: 50%;
+}
+
+.forecast-for-today table {
+  height: 100%;
+}
+
+.summary {
+  margin: auto;
+}
+
+.summary .weather-icon {
+  width: 150px;
+}
+.summary p {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .city {
   font-size: 20px;
   font-weight: bold;
@@ -74,10 +98,28 @@ main {
 .current-temperature {
   font-size: 40px;
 }
-/* free-days-forecast */
+/* thee-days-forecast */
+.three-days-forecast {
+  height: 32.5%;
+}
+
 .forecast-list {
   display: flex;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.forecast-list li {
+  font-weight: bold;
+  margin: auto;
+  text-align: center;
+}
+
+.forecast-list img {
+  width: 80px;
 }
 
 /* location block styles */
@@ -131,4 +173,17 @@ main {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.longitude,
+.latitude {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  background-color: rgba(128, 128, 128, 0.5);
+  font-size: 20px;
+}
+
+.latitude {
+  top: calc(25px + 10%);
 }

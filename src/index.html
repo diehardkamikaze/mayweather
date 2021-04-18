@@ -10,8 +10,8 @@
   <header>
     <nav class="control-block">
       <button class="change-bg" type="button">Сменить фон очередной раз</button>
-      <button class="change-lang" type="button">en/ru</button>
-      <button class="change-unit" type="button">°C/°F</button>
+      <button class="change-lang" type="button">EN</button>
+      <button class="change-unit" type="button">C</button>
       <div class="search-wrapper">
         <input type="text" id="search-input" placeholder="Введите местоположение">
         <button class="search-go" type="button">Поиск</button>
@@ -19,44 +19,49 @@
     </nav>
   </header>
   <main>
+    <section class="location-info">
+      <iframe src="" width="100%" height="100%" title="Map"></iframe>
+      <p class="longitude"><b>Широта:</b><span></span></p>
+      <p class="latitude"><b>Долгота:</b><span></span></p>
+    </section>
     <div class="forecast">
       <section class="forecast-for-today">
           <table>
             <tr>
-              <td>Город:</td>
+              <td class="city-head">Город:</td>
               <td><span class="city">Казань</span></td>
             </tr>
             <tr>
-              <td>Страна:</td>
+              <td class="country-head">Страна:</td>
               <td><span class="country">Россия</span></td>
             </tr>
             <tr>
-              <td>Дата:</td>
+              <td class="date-head">Дата:</td>
               <td><span class="date">Сб, 24, май</span></td>
             </tr>
             <tr>
-              <td>Время :</td>
-              <td><span class="time">16:23:55</span></td>
+              <td class="time-head">Время:</td>
+              <td><span class="time"></span></td>
             </tr>
             <tr>
-              <td>Текущая температура:</td>
+              <td class="current-temperature-head">Текущая температура:</td>
               <td><span class="current-temperature">22 °C</span></td>
             </tr>
             <tr>
-              <td>По ощущению:</td>
+              <td class="apparent-temparature-head">По ощущению:</td>
               <td><span class="apparent-temparature">20 °C</span></td>
             </tr>
             <tr>
-              <td>Скорость ветра:</td>
+              <td class="wind-speed-head">Скорость ветра:</td>
               <td><span class="wind-speed">1 м/с, СВ</span></td>
             </tr>
             <tr>
-              <td>Влажность:</td>
+              <td class="humidity-head">Влажность:</td>
               <td><span class="humidity">23 %</span></td>
             </tr>
           </table>
           <div class="summary">
-            <image src="" alt="weather-icon"></image>
+            <image src="" class="weather-icon" alt="weather-icon"></image>
             <p class="weather-summary">Ясно</p>
           </div>
       </section>
@@ -65,28 +70,26 @@
           <li>
             <p class="day">Суббота</p>
             <p class="average-temperature">22 °C</p>
-            <image src="" alt="weather-icon">
+            <image src="" class="weather-icon" alt="weather-icon">
+            <p class="day-summary"></p>
           </li>
           <li>
             <p class="day">Воскресенье</p>
             <p class="average-temperature">22 °C</p>
-            <image src="" alt="weather-icon">
+            <image src="" class="weather-icon" alt="weather-icon">
+              <p class="day-summary"></p>
           </li>
           <li>
             <p class="day">Понедельник</p>
             <p class="average-temperature">22 °C</p>
-            <image src="" alt="weather-icon">
+            <image src="" class="weather-icon" alt="weather-icon">
+            <p class="day-summary"></p>
           </li>
         </ul>
       </section>
     </div>
-    <section class="location-info">
-      <p class="longitude">Широта</p>
-      <p class="latitude">Долгота</p>
-    </section>
   </main>
   <footer>
-    someone useful
   </footer>
 </body>
 </html>
