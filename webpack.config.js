@@ -14,12 +14,12 @@ module.exports = {
     extensions: ['js'],
   }), new HtmlWebpackPlugin({
     template: path.resolve(__dirname, 'src/index.html'),
-  }), new CopyPlugin({
+  }), /* new CopyPlugin({
     patterns: [{
       from: path.resolve(__dirname, 'src/assets/images'), to: path.resolve(__dirname, 'dist'),
     },
     ],
-  })],
+  }) */ ],
   devServer: {
     port: 1480,
     contentBase: path.resolve(__dirname, 'dist'),
