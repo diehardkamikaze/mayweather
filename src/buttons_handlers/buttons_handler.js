@@ -73,9 +73,6 @@ const buttonSearchHandler = (event) => {
   const clickedButton = event.target;
   const mapLoader = addLoader(window.masterObj.elements.map);
   window.masterObj.elements.mapframe.src = ''; // не догнал зачем так делать
-  window.masterObj.elements.mapframe.onload = () => {
-    window.masterObj.elements.map.removeChild(mapLoader);
-  };
   const dayLoader = addLoader(window.masterObj.elements.forecastToday);
   const days3Loader = addLoader(window.masterObj.elements.forecastTheeDays);
   clickedButton.disabled = true;
@@ -84,6 +81,9 @@ const buttonSearchHandler = (event) => {
   changeSearchLogic(locationName, 'ru')
     .then((weatherForecast) => {
       weatherTmp = weatherForecast;
+      window.masterObj.elements.mapframe.onload = () => {
+        window.masterObj.elements.map.removeChild(mapLoader);
+      };
       locationLogic(weatherForecast.location);
       fillUnit(weatherForecast);
       fillWeatherData(weatherForecast, 'ru');
