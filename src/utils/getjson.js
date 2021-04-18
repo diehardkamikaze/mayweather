@@ -5,7 +5,7 @@ const getJSON = (address) => new Promise((resolve, reject) => {
   xhr.onload = () => {
     if (xhr.status === 200) {
       resolve(xhr.response);
-    } else { reject(xhr.status); }
+    } else { reject(xhr.response); }
   };
   xhr.send();
 });
