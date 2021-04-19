@@ -71,7 +71,7 @@ function initAll() {
   changeBgLogic().then(dataDone);
 
   /* get location, then weatherForecast, then   */
-  getJSON('http://ipinfo.io/?token=8f1769cb9f55d9')
+  getJSON('https://ipinfo.io/?token=8f1769cb9f55d9')
     .then((userLocation) => getJSON(`https://api.weatherapi.com/v1/forecast.json?key=363474e96d194f10ab9212718201105&q=${encodeURIComponent(userLocation.city)}&days=3&lang=ru`),
       errorHandler)
     .then((weatherForecast) => {
