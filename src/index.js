@@ -29,6 +29,21 @@ function initAll() {
     changeLangLogic(localStorage.getItem('userLang').toLowerCase());
   }
 
+  /* update actual data */
+  const currentTime = new Date();
+  const afterHour = new Date(
+    currentTime.getFullYear(),
+    currentTime.getMonth(),
+    currentTime.getDate(),
+    currentTime.getHours() + 1,
+  );
+  function updateData() {
+    window.masterObj.buttons.search.click();
+    setTimeout(updateData, 60 * 60 * 3600);
+  }
+  setTimeout(() => {
+    updateData();
+  }, (afterHour - currentTime));
   /* clock timer */
   setInterval(() => {
     window.masterObj.elements.time.innerHTML = new Date().toLocaleTimeString();
@@ -80,7 +95,7 @@ function initAll() {
       fillUnit(weatherForecast);
       fillWeatherData(weatherForecast, 'ru');
       fillWithImages([
-        weatherForecast.current.condition.icon,
+        weatherForecast.forecast.forecastday[0].hour[new Date().getHours()].condition.icon,
         weatherForecast.forecast.forecastday[0].day.condition.icon,
         weatherForecast.forecast.forecastday[1].day.condition.icon,
         weatherForecast.forecast.forecastday[2].day.condition.icon,

@@ -37,16 +37,18 @@ function getUnitObj() {
 
 function fillUnit(forecast) {
   const tmp = window.masterObj.unit;
-  tmp.currentTemperature.C = `${forecast.current.temp_c} °C`;
-  tmp.currentTemperature.F = `${forecast.current.temp_f} °F`;
-  tmp.apparentTemparature.C = `${forecast.current.feelslike_c} °C`;
-  tmp.apparentTemparature.F = `${forecast.current.feelslike_f} °F`;
-  tmp.averageTemperatureDay1.C = `${forecast.forecast.forecastday[0].day.avgtemp_c} °C`;
-  tmp.averageTemperatureDay1.F = `${forecast.forecast.forecastday[0].day.avgtemp_f} °F`;
-  tmp.averageTemperatureDay2.C = `${forecast.forecast.forecastday[1].day.avgtemp_c} °C`;
-  tmp.averageTemperatureDay2.F = `${forecast.forecast.forecastday[1].day.avgtemp_f} °F`;
-  tmp.averageTemperatureDay3.C = `${forecast.forecast.forecastday[2].day.avgtemp_c} °C`;
-  tmp.averageTemperatureDay3.F = `${forecast.forecast.forecastday[2].day.avgtemp_f} °F`;
+  const forecastDay = forecast.forecast.forecastday;
+  const currentHour = new Date().getHours();
+  tmp.currentTemperature.C = `${forecastDay[0].hour[currentHour].temp_c} °C`;
+  tmp.currentTemperature.F = `${forecastDay[0].hour[currentHour].temp_f} °F`;
+  tmp.apparentTemparature.C = `${forecastDay[0].hour[currentHour].feelslike_c} °C`;
+  tmp.apparentTemparature.F = `${forecastDay[0].hour[currentHour].feelslike_f} °F`;
+  tmp.averageTemperatureDay1.C = `${forecastDay[0].day.avgtemp_c} °C`;
+  tmp.averageTemperatureDay1.F = `${forecastDay[0].day.avgtemp_f} °F`;
+  tmp.averageTemperatureDay2.C = `${forecastDay[1].day.avgtemp_c} °C`;
+  tmp.averageTemperatureDay2.F = `${forecastDay[1].day.avgtemp_f} °F`;
+  tmp.averageTemperatureDay3.C = `${forecastDay[2].day.avgtemp_c} °C`;
+  tmp.averageTemperatureDay3.F = `${forecastDay[2].day.avgtemp_f} °F`;
 }
 
 export { getUnitObj, fillUnit };

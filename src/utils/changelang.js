@@ -143,17 +143,18 @@ function fillWeatherData(forecast, language) {
     month: 'long', weekday: 'long', day: '2-digit', hour12: false,
   };
   const tmp = window.masterObj.lang;
-  tmp.humidity[language] = `${forecast.current.humidity} %`;
-  tmp.windspeed[language] = (forecast.current.wind_kph / 3.6).toFixed(2) + (language === 'ru' ? ' м/c' : ' mps');
-  tmp.weathersummary[language] = forecast.current.condition.text;
+  const fDay = forecast.forecast.forecastday;
+  const currentHour = new Date().getHours();
+  tmp.humidity[language] = `${fDay[0].hour[currentHour].humidity} %`;
+  tmp.windspeed[language] = (fDay[0].hour[currentHour].wind_kph / 3.6).toFixed(2) + (language === 'ru' ? ' м/c' : ' mps');
+  tmp.weathersummary[language] = fDay[0].hour[currentHour].condition.text;
 
-  const dobj = forecast.forecast.forecastday;
-  tmp.day1[language] = new Date(dobj[0].date).toLocaleTimeString(language, options).slice(0, -10);
-  tmp.day1summary[language] = forecast.forecast.forecastday[0].day.condition.text;
-  tmp.day2[language] = new Date(dobj[1].date).toLocaleTimeString(language, options).slice(0, -10);
-  tmp.day2summary[language] = forecast.forecast.forecastday[1].day.condition.text;
-  tmp.day3[language] = new Date(dobj[2].date).toLocaleTimeString(language, options).slice(0, -10);
-  tmp.day3summary[language] = forecast.forecast.forecastday[2].day.condition.text;
+  tmp.day1[language] = new Date(fDay[0].date).toLocaleTimeString(language, options).slice(0, -10);
+  tmp.day1summary[language] = fDay[0].day.condition.text;
+  tmp.day2[language] = new Date(fDay[1].date).toLocaleTimeString(language, options).slice(0, -10);
+  tmp.day2summary[language] = fDay[1].day.condition.text;
+  tmp.day3[language] = new Date(fDay[2].date).toLocaleTimeString(language, options).slice(0, -10);
+  tmp.day3summary[language] = fDay[2].day.condition.text;
 }
 
 function fillMeta(location, language) {
