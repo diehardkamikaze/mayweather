@@ -1,1 +1,1 @@
-export default (error) => { alert('problem with opencagedata'); console.log(error); };
+export default (error) => { console.log(error); alert('problem, see console'); window.location.reload(); };

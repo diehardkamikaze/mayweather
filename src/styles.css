@@ -41,6 +41,10 @@ footer {
   font-weight: bold;
 }
 
+.control-block .change-unit::before {
+  content: "°";
+}
+
 .control-block button:disabled {
   background-color: grey;
 }
