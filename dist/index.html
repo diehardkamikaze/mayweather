@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>May Weather</title>
+  <meta name="description" content="weather forecast for today">
+<script defer src="main.9cff20fdfee395b25b68.js"></script></head>
+<body>
+  <img class="background" src=""></img>
+  <header>
+    <nav class="control-block">
+      <button class="change-bg" type="button">Сменить фон очередной раз</button>
+      <button class="change-lang" type="button">EN</button>
+      <button class="change-unit" type="button">C</button>
+      <div class="search-wrapper">
+        <input type="text" id="search-input" placeholder="Введите местоположение">
+        <button class="search-go" type="button">Поиск</button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="location-info">
+      <iframe src="" width="100%" height="100%" title="Map"></iframe>
+      <p class="longitude"><b>Широта:</b><span></span></p>
+      <p class="latitude"><b>Долгота:</b><span></span></p>
+    </section>
+    <div class="forecast">
+      <section class="forecast-for-today">
+          <table>
+            <tr>
+              <td class="city-head">Город:</td>
+              <td><span class="city">Казань</span></td>
+            </tr>
+            <tr>
+              <td class="country-head">Страна:</td>
+              <td><span class="country">Россия</span></td>
+            </tr>
+            <tr>
+              <td class="date-head">Дата:</td>
+              <td><span class="date">Сб, 24, май</span></td>
+            </tr>
+            <tr>
+              <td class="time-head">Время:</td>
+              <td><span class="time"></span></td>
+            </tr>
+            <tr>
+              <td class="current-temperature-head">Текущая температура:</td>
+              <td><span class="current-temperature">22 °C</span></td>
+            </tr>
+            <tr>
+              <td class="apparent-temparature-head">По ощущению:</td>
+              <td><span class="apparent-temparature">20 °C</span></td>
+            </tr>
+            <tr>
+              <td class="wind-speed-head">Скорость ветра:</td>
+              <td><span class="wind-speed">1 м/с, СВ</span></td>
+            </tr>
+            <tr>
+              <td class="humidity-head">Влажность:</td>
+              <td><span class="humidity">23 %</span></td>
+            </tr>
+          </table>
+          <div class="summary">
+            <image src="" class="weather-icon" alt="weather-icon"></image>
+            <p class="weather-summary">Ясно</p>
+          </div>
+      </section>
+      <section class="three-days-forecast">
+        <ul class="forecast-list">
+          <li>
+            <p class="day">Суббота</p>
+            <p class="average-temperature">22 °C</p>
+            <image src="" class="weather-icon" alt="weather-icon">
+            <p class="day-summary"></p>
+          </li>
+          <li>
+            <p class="day">Воскресенье</p>
+            <p class="average-temperature">22 °C</p>
+            <image src="" class="weather-icon" alt="weather-icon">
+              <p class="day-summary"></p>
+          </li>
+          <li>
+            <p class="day">Понедельник</p>
+            <p class="average-temperature">22 °C</p>
+            <image src="" class="weather-icon" alt="weather-icon">
+            <p class="day-summary"></p>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer>
+  </footer>
+</body>
+</html>
