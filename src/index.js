@@ -38,8 +38,12 @@ function initAll() {
     currentTime.getHours() + 1,
   );
   function updateData() {
+    if (!window.masterObj.elements.search.value) {
+      window.masterObj.elements.search.value = window.masterObj.lang.city.en;
+    }
+    console.log('night test');
     window.masterObj.buttons.search.click();
-    setTimeout(updateData, 60 * 60 * 3600);
+    setTimeout(updateData, 60 * 60 * 1000);
   }
   setTimeout(() => {
     updateData();
